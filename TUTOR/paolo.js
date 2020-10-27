@@ -27,7 +27,6 @@ app.get("/exercise", (req, res) => {
 
 
 
-
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
