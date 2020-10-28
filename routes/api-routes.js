@@ -8,7 +8,7 @@ module.exports = function (app) {
         const workout = body;
 
         try {
-            const data = await Workout.create(workout);
+            const data = await Workout.create({});
             res.json(data);
 
         } catch (error) {
@@ -30,12 +30,12 @@ module.exports = function (app) {
         }
     });
 
-    //PUT route to update and Add exercises to a previous workout plan.
-    app.put("/api/workouts/:id", async (req, res) => {
+    //POST route for workouts over range of dates
+    app.post("/api/workouts/range", async (req, res) => {
 
         try {
-            const data = await Workout.updateOne({ _id: req.params.id }, { $push: { workouts: req.body.workout } });
-            return res.json(data);
+            const workouts = await Workout.create({});
+            return res.json(workouts);
 
         } catch (error) {
             console.log(error);
@@ -47,7 +47,7 @@ module.exports = function (app) {
     app.get("/api/workouts/range", async (req, res) => {
 
         try {
-            const workouts = await Workout.find().limit(7);
+            const workouts = await Workout.find();
             return res.json(workouts);
 
         } catch (error) {
@@ -55,4 +55,31 @@ module.exports = function (app) {
             return res.sendStatus(500);
         }
     });
+
+    //PUT route to update and Add exercises to a previous workout plan.
+    app.put("/api/workouts/:id", async (req, res) => {
+
+        try {
+            const data = await Workout.findByIdAndUpdate({ _id: req.params.id }, { $push: { exercises: req.body }});
+            return res.json(data);
+
+        } catch (error) {
+            console.log(error);
+            return res.sendStatus(500);
+        }
+    });
+
+    // // Delete a workout by id
+    // app.delete("/api/workouts/:id", async (req, res) => {
+
+    //     try {
+    //         const data = await Workout.findOneAndRemove({ _id: req.params.id });
+    //         return res.json(data);
+
+    //     } catch (error) {
+    //         console.log(error);
+    //         return res.sendStatus(500);
+    //     }
+
+    // });
 }

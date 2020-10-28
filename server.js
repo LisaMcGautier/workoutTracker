@@ -16,21 +16,12 @@ const PORT = process.env.PORT || 3000;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-const Workout=require("./models/workoutModel.js");
+// const Workout=require("./models/workoutModel.js");
 
 
 // Routes -- Requiring our routes
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-
-
-
-
-
-
-
-// get all workout data from back-end
-// View the combined weight of multiple exercises on the `stats` page.
 
 
 
