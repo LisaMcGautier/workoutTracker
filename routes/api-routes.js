@@ -2,13 +2,30 @@ const Workout = require("../models/workoutModel.js");
 
 module.exports = function (app) {
 
-    //POST route to Add new exercises to a new workout plan.
-    app.post("/api/workouts", async ({ body }, res) => {
+    // //POST route to Add new exercises to a new workout plan.
+    // app.post("/api/workouts", async ({ body }, res) => {
 
-        const workout = body;
+    //     const workout = body;
+    //     // req.body
+
+    //     try {
+    //         const data = await Workout.create({});
+    //         res.json(data);
+
+    //     } catch (error) {
+    //         console.log(error);
+    //         return res.sendStatus(500);
+    //     }
+    // });
+
+    //POST route to Add new exercises to a new workout plan. ********************************
+    app.post("/api/workouts", async (req, res) => {
+
+        // const workout = req.body;
+        // req.body
 
         try {
-            const data = await Workout.create({});
+            const data = await Workout.create({ exercises: req.body });
             res.json(data);
 
         } catch (error) {
@@ -30,18 +47,18 @@ module.exports = function (app) {
         }
     });
 
-    //POST route for workouts over range of dates
-    app.post("/api/workouts/range", async (req, res) => {
+    // //POST route for workouts over range of dates
+    // app.post("/api/workouts/range", async (req, res) => {
 
-        try {
-            const workouts = await Workout.create({});
-            return res.json(workouts);
+    //     try {
+    //         const workouts = await Workout.create({});
+    //         return res.json(workouts);
 
-        } catch (error) {
-            console.log(error);
-            return res.sendStatus(500);
-        }
-    });
+    //     } catch (error) {
+    //         console.log(error);
+    //         return res.sendStatus(500);
+    //     }
+    // });
 
     //GET route for previous workouts range of dates
     app.get("/api/workouts/range", async (req, res) => {
