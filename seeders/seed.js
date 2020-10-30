@@ -1,4 +1,5 @@
 let mongoose = require("mongoose");
+// CHANGED db variable to Workouut and added path to schema file
 let Workout = require("../models/workoutModel.js");
 
 mongoose.connect("mongodb://localhost/workout", {
@@ -8,7 +9,8 @@ mongoose.connect("mongodb://localhost/workout", {
 
 let workoutSeed = [
   {
-    day: new Date().setDate(new Date().getDate()-10),
+    // CHANGED date notation to human readable format
+    day: new Date(new Date().setDate(new Date().getDate()-10)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -21,7 +23,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-9),
+    day: new Date(new Date().setDate(new Date().getDate()-9)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -34,7 +36,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-8),
+    day: new Date(new Date().setDate(new Date().getDate()-8)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -47,7 +49,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-7),
+    day: new Date(new Date().setDate(new Date().getDate()-7)).toJSON(),
     exercises: [
       {
         type: "cardio",
@@ -58,7 +60,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-6),
+    day: new Date(new Date().setDate(new Date().getDate()-6)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -71,7 +73,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-5),
+    day: new Date(new Date().setDate(new Date().getDate()-5)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -84,7 +86,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-4),
+    day: new Date(new Date().setDate(new Date().getDate()-4)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -97,7 +99,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-3),
+    day: new Date(new Date().setDate(new Date().getDate()-3)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -110,7 +112,7 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-2),
+    day: new Date(new Date().setDate(new Date().getDate()-2)).toJSON(),
     exercises: [
       {
         type: "resistance",
@@ -123,11 +125,14 @@ let workoutSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-1),
+    day: new Date(new Date().setDate(new Date().getDate()-1)).toJSON(),
     exercises: [
       {
-        type: "resistance",
-        name: "Bench",
+        // CHANGED type and name to match duration and distance 
+        // type: "resistance",
+        // name: "Bench",
+        type: "cardio",
+        name: "Running",
         duration: 30,
         distance: 2
       }
@@ -135,6 +140,7 @@ let workoutSeed = [
   }
 ];
 
+//CHANGED db variable to Workout
 Workout.deleteMany({})
   .then(() => Workout.collection.insertMany(workoutSeed))
   .then(data => {

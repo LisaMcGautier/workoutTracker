@@ -16,14 +16,9 @@ const PORT = process.env.PORT || 3000;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-// const Workout=require("./models/workoutModel.js");
-
-
 // Routes -- Requiring our routes
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-
-
 
 // Start the server
 app.listen(PORT, () => {

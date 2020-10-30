@@ -1,51 +1,65 @@
-# Unit 17 Nosql Homework: Workout Tracker
+# Workout Tracker
+No license selected
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+## Description
 
-## User Story
+Create, view, and track workout information for resistance and cardio training.
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+## Table of Contents
 
-## Business Context
+* [Technologies](#technologies)
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+* [Installation](#installation)
 
-## Acceptance Criteria
+* [Usage](#usage)
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+* [License](#license)
 
-The user should be able to:
+* [Contributing](#contributing)
 
-  * Add exercises to a previous workout plan.
+* [Tests](#tests)
 
-  * Add new exercises to a new workout plan.
+* [Questions](#questions)
 
-  * View multiple the combined weight of multiple exercises on the `stats` page.
 
-## Commit Early and Often
+## Technologies
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+The following technologies were used to create this project:
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+```
+node, express, MongoDb, Mongoose on the backend
+```
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+## Installation
 
-Follow these guidelines for committing:
+To install necessary dependencies, run the following commands:
 
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+```
+npm install    npm run seed    npm start
+```
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
+## Usage
 
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
+Front end code was provided; I worked on the backend files, including server.js, API and HTML routes and the Mongoose workout schema.
 
-* Test your application before you commit to ensure functionality at every step in the development process
+## License
 
-We would like you to have well over 200 commits by graduation, so commit early and often!
+This project is licensed under the none license.
 
-## Submission on BCS
+## Contributing
 
-You are required to submit the following:
+Contributions are not being accepted at this time.
 
-* The URL to the deployed application
+## Tests
 
-* The URL to the Github repository
+To run tests, run the following command:
+
+```
+N/A
+```
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at dlanodcm4517@gmail.com
+
+You can find more of my work at [GITHUBrepo](https://github.com/lisamcgautier)
