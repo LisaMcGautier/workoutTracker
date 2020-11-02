@@ -5,6 +5,10 @@ No license selected
 
 Create, view, and track workout information for resistance and cardio training.
 
+## Deployment
+
+App deployed on heroku.com: https://mysterious-lowlands-66280.herokuapp.com/
+
 ## Screenshots
 
 Stats page with exercise data:
